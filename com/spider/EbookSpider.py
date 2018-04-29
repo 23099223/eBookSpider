@@ -7,6 +7,7 @@ driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true', '--load-i
 # driver.set_window_size(1280, 2400)
 driver.get('http://www.booktxt.net/xiaoshuodaquan/')
 content = driver.page_source
+print(content)
 selector = etree.HTML(content)
 txt_name_list = selector.xpath('//div[@class="novellist"]/ul/li/a/text()')
 print(txt_name_list)
